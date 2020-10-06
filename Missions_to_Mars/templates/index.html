@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body style="background-color:rgb(202, 177, 195);" >
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>From Nasa, Twitter, USGS Astreo, JPL etc...</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data!</a></p>
+    </div>
+    <!-- 
+    
+    -->
+    <h2>LATEST MARS NEWS :</h2>
+    <div>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>News Title (scraped from Nasa) </h3>
+          <p>{{ mars_data.news_title}}</p>
+        </div>
+        <div class="col-md-4">
+          <h3>News Para (scaraped from Nasa) </h3>
+          <p>{{ mars_data.news_p}}</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Twitter's scrape for Mars Weather</h3>
+          <p>{{mars_data.twitter_weather}}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>JPL Featured image  </h3>
+          <p>{{mars_data.featured_image}}</p>
+          <img src={{mars_data.featured_image}} alt="ImageNotFound" width="500" height="500">
+        </div>
+        <div class="col-md-6">
+          <h3>Mars Facts table (from space-facts.com): </h3>
+          <p>{{mars_data.mars_table | safe}}</p>
+        </div>
+      </div>
+    </div>
+    
+  
+
+    <h3>Mars Astro Hemispheres</h3>
+      <div class = "row">
+        <div class="col-md-6">
+          <p>
+            {{mars_data.hemisphere_data[0]["title"]}} 
+          </p>
+          <img src={{mars_data.hemisphere_data[0]["img_url"]}} alt="ImageNotFound" width="500" height="500">
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{mars_data.hemisphere_data[1]["title"]}}
+          </p>
+          <img src={{mars_data.hemisphere_data[1]["img_url"]}} alt="ImageNotFound" width="500" height="500">
+        </div>
+      </div>
+      <div class = "row">
+        <div class="col-md-6">
+          <p>
+            {{mars_data.hemisphere_data[2]["title"]}}
+          </p>
+          <img src={{mars_data.hemisphere_data[2]["img_url"]}} alt="ImageNotFound" width="500" height="500">
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{mars_data.hemisphere_data[3]["title"]}}
+          </p>
+          <img src={{mars_data.hemisphere_data[3]["img_url"]}} alt="ImageNotFound" width="500" height="500">
+        </div>
+      </div>
+    
+  </div>
+  </div>
+</body>
+
+</html>
